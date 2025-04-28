@@ -196,7 +196,7 @@
                   <div class="col-6">
                     <div class="info-item">
                       <span class="label">Age</span>
-                      <span class="value">20</span>
+                      <span class="value">18</span>
                     </div>
                   </div>
 
@@ -943,13 +943,17 @@
       <div class="col-lg-6">
         <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
           <div class="card-body p-4 p-lg-5">
-            <form id="contact-form" class="php-email-form">
+            <form id="contact-form" class="php-email-form" action="https://api.web3forms.com/submit" method="POST">
               <div class="row gy-4">
+            
+                <!-- Hidden Access Key -->
+                <input type="hidden" name="access_key" value="8ec58667-cc13-471a-9dd1-b0e10ad620c4">
+            
                 <div class="col-12">
-                  <input type="text" name="from_name" class="form-control" placeholder="Your Name" required />
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required />
                 </div>
                 <div class="col-12">
-                  <input type="email" name="from_email" class="form-control" placeholder="Your Email" required />
+                  <input type="email" name="email" class="form-control" placeholder="Your Email" required />
                 </div>
                 <div class="col-12">
                   <input type="text" name="subject" class="form-control" placeholder="Subject" required />
@@ -957,12 +961,18 @@
                 <div class="col-12">
                   <textarea name="message" rows="6" class="form-control" placeholder="Message" required></textarea>
                 </div>
+            
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
                 <div class="col-12 text-center">
                   <button type="submit" class="btn btn-submit w-100">Submit Message</button>
                   <div id="form-status" class="mt-3"></div>
                 </div>
+            
               </div>
             </form>
+            
           </div>
         </div>
       </div>
@@ -1020,7 +1030,7 @@
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  (function(){
+  /*(function(){
     emailjs.init("zelliXbS4BuQn7pYG"); // Your Public Key
   })();
 
@@ -1035,6 +1045,7 @@
         console.error("EmailJS Error:", err);
       });
   });
+  */
 </script>
 
 </body>
