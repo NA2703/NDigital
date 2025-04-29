@@ -36,6 +36,7 @@
 
 
 
+
  
 </head>
 
@@ -943,7 +944,7 @@
       <div class="col-lg-6">
         <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
           <div class="card-body p-4 p-lg-5">
-            <form id="contact-form" class="php-email-form" action="https://api.web3forms.com/submit" method="POST">
+            <form id="contact-form" class="php-email-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return handleFormSubmission(event)">
               <div class="row gy-4">
             
                 <!-- Hidden Access Key -->
@@ -981,8 +982,7 @@
   </div>
 </section>
 
-
-    
+  
   </main>
 
   <footer id="footer" class="footer">
