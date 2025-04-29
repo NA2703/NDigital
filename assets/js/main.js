@@ -251,3 +251,38 @@ setInterval(showSkill, 4000);
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+// Your existing code here...
+
+// Handle form submission without page reload
+function handleFormSubmission(event) {
+  event.preventDefault(); // Prevent form from submitting the usual way
+
+  const form = document.getElementById('contact-form');
+  const statusDiv = document.getElementById('form-status');
+
+  // Show loading status
+  statusDiv.innerHTML = "Sending your message...";
+
+  // Use Fetch API to submit the form data
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: form.method,
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      statusDiv.innerHTML = "<p class='text-success'>Thank you for contacting us! Your message has been sent successfully.</p>";
+      form.reset();  // Reset form after submission
+    } else {
+      statusDiv.innerHTML = "<p class='text-danger'>Sorry, something went wrong. Please try again later.</p>";
+    }
+  })
+  .catch(error => {
+    statusDiv.innerHTML = "<p class='text-danger'>There was an error sending your message. Please try again later.</p>";
+  });
+}
+
+// Add event listener for form submission
+document.getElementById('contact-form').addEventListener('submit', handleFormSubmission);
