@@ -250,7 +250,7 @@ setInterval(showSkill, 4000);
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-})();
+});
 // Your existing code here...
 
 // Handle form submission without page reload
