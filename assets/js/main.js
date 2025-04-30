@@ -7,7 +7,7 @@
      */
     const skills = [
       { text: "WordPress Development", color: "#E87532" },
-      { text: "E-Commerce Development", color: "#4CAF50" },
+      { text: "E-Commerce Development", color: "#4CAF50" }, 
       { text: "Search Engine Optimization", color: "#2196F3" },
       { text: "Google Ads(PPC)", color: "#9C27B0" },
       { text: "Facebook Ads", color: "#f44336" }
