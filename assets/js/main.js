@@ -1,44 +1,43 @@
-/**
-* Template Name: EasyFolio
-* Template URL: https://bootstrapmade.com/easyfolio-bootstrap-portfolio-template/
-* Updated: Feb 21 2025 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 (function() {
   "use strict";
-  /**
- * Custom Skills Typing Animation
- */
-const skills = [
-  { text: "WordPress Development", color: "#E87532" },
-  { text: "E-Commerce Development", color: "#4CAF50" },
-  { text: "Search Engine Optomization", color: "#2196F3" },
-  { text: "Google Ads(PPC)", color: "#9C27B0" },
-  { text: "Facebook Ads ", color: "#f44336" }
+    /**
+     * Custom Skills Typing Animation
+     */
+    const skills = [
+      { text: "WordPress Development", color: "#E87532" },
+      { text: "E-Commerce Development", color: "#4CAF50" },
+      { text: "Search Engine Optimization", color: "#2196F3" },
+      { text: "Google Ads(PPC)", color: "#9C27B0" },
+      { text: "Facebook Ads", color: "#f44336" }
+    ];
   
+    const dynamicSkill = document.getElementById('dynamic-skill');
+    const skillsLine = document.querySelector('.skills-line');
+    let currentSkill = 0;
   
-];
-
-const dynamicSkill = document.getElementById('dynamic-skill');
-const skillsLine = document.querySelector('.skills-line');
-let currentSkill = 0;
-
-function showSkill() {
-  dynamicSkill.style.animation = 'none';
-  void dynamicSkill.offsetWidth;
-  dynamicSkill.style.animation = 'typing 3s steps(30, end) forwards, blink 0.7s infinite';
-
-  dynamicSkill.textContent = skills[currentSkill].text;
-  skillsLine.style.backgroundColor = skills[currentSkill].color;
-
-  currentSkill = (currentSkill + 1) % skills.length;
-}
-
-showSkill();
-setInterval(showSkill, 4000);
-
+    function showSkill() {
+      // Reset animation to trigger again
+      dynamicSkill.style.animation = 'none';
+      void dynamicSkill.offsetWidth; // This forces a reflow, ensuring the animation resets
+  
+      dynamicSkill.style.animation = 'typing 3s steps(30, end) forwards, blink 0.7s infinite';
+  
+      dynamicSkill.textContent = skills[currentSkill].text;
+      skillsLine.style.backgroundColor = skills[currentSkill].color;
+  
+      // Move to the next skill, wrapping around with modulo
+      currentSkill = (currentSkill + 1) % skills.length;
+    }
+  
+    // Initially show the first skill
+    showSkill();
+    
+    // Set interval to change skills every 4000 ms
+    setInterval(showSkill, 4000);
+  })();
+  
 
   /**
    * Apply .scrolled class to the body as the page is scrolled down
@@ -250,7 +249,7 @@ setInterval(showSkill, 4000);
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-});
+;
 // Your existing code here...
 
 // Handle form submission without page reload
