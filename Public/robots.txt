@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ndigital.vercel.app/sitemap.xml
