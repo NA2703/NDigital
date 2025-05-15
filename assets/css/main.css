@@ -903,7 +903,7 @@ section,
 
 .skills-line {
   background-color: orange;
-  width: 100%;
+  width: 85%;
   border-radius: 10px;
   padding: 40px 0;
   position: relative;
@@ -926,16 +926,16 @@ section,
 /* Define the typing animation */
 @keyframes typing {
   from {
-    width: 100;
+    width: 0;
   }
   to {
-    width: 21%;
+    width: 80%;
   }
 }
 
 /* Define the blinking cursor effect */
 @keyframes blink {
-  20% {
+  50% {
     border-color: transparent;
   }
 }
@@ -943,7 +943,7 @@ section,
 #dynamic-skill {
   display: inline-block;
   width: 0;
-  border-right: 2px solid #27262600; /* Creates a blinking cursor effect */
+  border-right: 2px solid #00000000; /* Creates a blinking cursor effect */
   overflow: hidden;
   white-space: nowrap;
   font-family: monospace;
