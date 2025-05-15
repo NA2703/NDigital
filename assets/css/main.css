@@ -926,16 +926,16 @@ section,
 /* Define the typing animation */
 @keyframes typing {
   from {
-    width: 0;
+    width: 100;
   }
   to {
-    width: 100%;
+    width: 21%;
   }
 }
 
 /* Define the blinking cursor effect */
 @keyframes blink {
-  50% {
+  20% {
     border-color: transparent;
   }
 }
@@ -943,7 +943,7 @@ section,
 #dynamic-skill {
   display: inline-block;
   width: 0;
-  border-right: 2px solid #000; /* Creates a blinking cursor effect */
+  border-right: 2px solid #27262600; /* Creates a blinking cursor effect */
   overflow: hidden;
   white-space: nowrap;
   font-family: monospace;
