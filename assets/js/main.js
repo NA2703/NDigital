@@ -1,43 +1,13 @@
-
+/**
+* Template Name: EasyFolio
+* Template URL: https://bootstrapmade.com/easyfolio-bootstrap-portfolio-template/
+* Updated: Feb 21 2025 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
 
 (function() {
   "use strict";
-    /**
-     * Custom Skills Typing Animation
-     */
-    const skills = [
-      { text: "WordPress Development", color: "#E87532" },
-      { text: "E-Commerce Development", color: "#4CAF50" }, 
-      { text: "Search Engine Optimization", color: "#2196F3" },
-      { text: "Google Ads(PPC)", color: "#9C27B0" },
-      { text: "Facebook Ads", color: "#f44336" }
-    ];
-  
-    const dynamicSkill = document.getElementById('dynamic-skill');
-    const skillsLine = document.querySelector('.skills-line');
-    let currentSkill = 0;
-  
-    function showSkill() {
-      // Reset animation to trigger again
-      dynamicSkill.style.animation = 'none';
-      void dynamicSkill.offsetWidth; // This forces a reflow, ensuring the animation resets
-  
-      dynamicSkill.style.animation = 'typing 3s steps(30, end) forwards, blink 0.7s infinite';
-  
-      dynamicSkill.textContent = skills[currentSkill].text;
-      skillsLine.style.backgroundColor = skills[currentSkill].color;
-  
-      // Move to the next skill, wrapping around with modulo
-      currentSkill = (currentSkill + 1) % skills.length;
-    }
-  
-    // Initially show the first skill
-    showSkill();
-    
-    // Set interval to change skills every 4000 ms
-    setInterval(showSkill, 4000);
-  })();
-  
 
   /**
    * Apply .scrolled class to the body as the page is scrolled down
@@ -249,39 +219,4 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-;
-// Your existing code here...
-
-// Handle form submission without page reload
-function handleFormSubmission(event) {
-  event.preventDefault(); // Prevent form from submitting the usual way
-
-  const form = document.getElementById('contact-form');
-  const statusDiv = document.getElementById('form-status');
-
-  // Show loading status
-  statusDiv.innerHTML = "Sending your message...";
-
-  // Use Fetch API to submit the form data
-  const formData = new FormData(form);
-
-  fetch(form.action, {
-    method: form.method,
-    body: formData
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      statusDiv.innerHTML = "<p class='text-success'>Thank you for contacting us! Your message has been sent successfully.</p>";
-      form.reset();  // Reset form after submission
-    } else {
-      statusDiv.innerHTML = "<p class='text-danger'>Sorry, something went wrong. Please try again later.</p>";
-    }
-  })
-  .catch(error => {
-    statusDiv.innerHTML = "<p class='text-danger'>There was an error sending your message. Please try again later.</p>";
-  });
-}
-
-// Add event listener for form submission
-document.getElementById('contact-form').addEventListener('submit', handleFormSubmission);
+})();
