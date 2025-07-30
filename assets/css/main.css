@@ -18,13 +18,13 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root {
-  --background-color: #ffffff;
-  --default-color: #0a0f14;
-  --heading-color: #0f2943;
-  --accent-color: #e87532;
-  --surface-color: #ffffff;
-  --contrast-color: #ffffff;
+:root { 
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #0a0f14; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #0f2943; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #e87532; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -187,7 +187,7 @@ h6 {
 }
 
 .header .header-social-links a:hover {
-  color: green;
+  color: var(--accent-color);
 }
 
 .header .header-social-links a i {
@@ -490,8 +490,8 @@ h6 {
 }
 
 .footer .social-links a:hover {
-  color: green;
-  border-color: green;
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .footer .credits {
@@ -706,21 +706,15 @@ section,
   overflow: hidden;
 }
 
-.hero .content h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
 .hero .content h2 {
-  font-size: 2rem;
-  font-weight: 250;
+  font-size: 3.5rem;
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
 }
 
 @media (max-width: 991px) {
-  .hero .content h1 {
+  .hero .content h2 {
     font-size: 2.5rem;
   }
 }
@@ -765,7 +759,7 @@ section,
 
 .hero .cta-buttons .btn.btn-outline {
   border: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
-  color: green;
+  color: var(--accent-color);
   background: transparent;
 }
 
@@ -878,79 +872,6 @@ section,
     border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
   }
 }
-/* WhatsApp button (outline) */
-.btn-whatsapp {
-  border: 2px solid #25D366;
-  color: #25D366;
-  background-color: transparent;
-  transition: all 0.3s ease;
-  padding: 10px 20px;
-  border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.btn-whatsapp:hover {
-  background-color: #25D366;
-  color: white;
-}
-
-.skills-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px; /* Set a nice height */
-}
-
-.skills-line {
-  background-color: orange;
-  width: 85%;
-  border-radius: 10px;
-  padding: 40px 0;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#dynamic-skill {
-  color: white;
-  font-size: 26px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid white;
-  animation: typing 5s steps(50, end) forwards, blink 0.7s infinite;
-}
-
-/* Define the typing animation */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 80%;
-  }
-}
-
-/* Define the blinking cursor effect */
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-#dynamic-skill {
-  display: inline-block;
-  width: 0;
-  border-right: 2px solid #00000000; /* Creates a blinking cursor effect */
-  overflow: hidden;
-  white-space: nowrap;
-  font-family: monospace;
-  font-size: 1.2em;
-}
-
-
 
 /*--------------------------------------------------------------
 # About Section
@@ -1014,14 +935,14 @@ section,
 }
 
 .about .personal-info .info-item .value {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--heading-color);
 }
 
 .about .signature {
   display: flex;
   align-items: center;
-  gap: 1.3rem;
+  gap: 1.5rem;
 }
 
 .about .signature .signature-image {
@@ -1776,11 +1697,10 @@ section,
 
 .portfolio-details .portfolio-info ul strong {
   text-transform: uppercase;
-  font-weight: 600;
-  color: var(--default-color); /* or choose a solid readable color */
+  font-weight: 400;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 14px;
 }
-
 
 .portfolio-details .portfolio-info .btn-visit {
   padding: 8px 40px;
